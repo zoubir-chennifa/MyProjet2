@@ -100,4 +100,24 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('verified'
 Route::get('/',function(){
  return "home";
  });
+Route::get("/redirect/{service}","SocialController@Redirect");
+Route::get("/callback/{service}","SocialController@Callback");
+
+
+Route::get("fillable",'CrudeController@GetOffers');
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]],
+    function()
+    {
+Route::group(['prefix'=>'offers'],function (){
+//Route::get('store','CrudeController@Store');
+        Route::get('create','CrudeController@Create');
+         Route::post('store','CrudeController@Store')->name('offers.store');
+        }
+    );
+
+
+
+});
+
+
 

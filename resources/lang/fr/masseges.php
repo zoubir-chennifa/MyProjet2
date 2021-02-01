@@ -13,6 +13,11 @@ return [
     |
     */
     "Hello "=>'Bonjour',
-    "Welcome"=>'bienvenue'
+    "Welcome"=>'bienvenue',
+    'Offer name required'=>'Le nom de l\'offre est obligatoire !!',
+    'Offer name unique'=> 'Le nom de l\'offer est unique !!',
+    'Offer price required'=>'le prix de l\'offer est obligatoire !!  ',
+    'Offer price numeric'=> 'Le prix de l\'offer est numérique!!!',
+    'Offer details required'=>'le détails de l\'offer est obiligatoire',
 
 ];

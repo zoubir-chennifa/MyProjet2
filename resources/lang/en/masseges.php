@@ -14,6 +14,13 @@ return [
     */
 
    "Hello "=>'Hello',
-    "Welcome"=>'Welcome'
+    "Welcome"=>'Welcome',
+    'Offer name required'=>'Offer name is required !!',
+    'Offer name unique'=> 'Offer name is unique !!!',
+    'Offer price required'=>'Offer price is required !!',
+    'Offer price numeric'=> 'Offer price is numeric !!!',
+    'Offer details required'=>'Offer details is required !!',
+
+
 
 ];
