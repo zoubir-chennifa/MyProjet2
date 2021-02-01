@@ -93,64 +93,29 @@
             </div>
         </div>
     </nav>
-    @if(Session::has("success"))
-    <div class="alert alert-success" role="alert">
-        {{Session::get("success")}}
-    </div>
-    @endif
-    <br>
- <form method="post" action="{{Route('offers.store')}}" style="width: 500px;height: auto; border: #c8cbcf 2px solid;border-radius: 5px; margin-left: 20% ;padding: 20px 30px">
-     @csrf
-      {{--@csrf=<input name="_token" value="{{csrf_token()}}">--}}
-    <h1>{{__('masseges.Add your offfer')}}</h1>
-          <div class="form-group">
-              <label for="exampleInputEmail1">{{__("masseges.name fr")}} :</label>
-              <input type="text" class="form-control" name="name_fr" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__('masseges.pl name')}}">
-                   @error('name_fr')
-              <small  class="form-text text-danger">{{$message}}</small>
-              @enderror()
-          </div>
-     {{--name 2--}}
-     <div class="form-group">
-         <label for="exampleInputEmail1">{{__("masseges.name en")}} :</label>
-         <input type="text" class="form-control" name="name_en" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="{{__('masseges.pl name')}}">
-         @error('name_en')
-         <small  class="form-text text-danger">{{$message}}</small>
-         @enderror()
-     </div>
 
+    <table class="table table-dark">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">{{__("masseges.name ".LaravelLocalization::getCurrentLocale())}}</th>
+            <th scope="col">{{__("masseges.price")}}</th>
+            <th scope="col">{{__("masseges.details ".LaravelLocalization::getCurrentLocale())}}</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($Offers as $offer)
+        <tr>
+            <th scope="row">{{$offer->id}}</th>
+            <td>{{$offer->name}}</td>
+            <td>{{$offer->price}}</td>
+            <td>{{$offer->details}}</td>
+        </tr>
+            @endforeach
 
-          <div class="form-group">
-              <label for="exampleInputPassword1">{{__("masseges.price")}}  :</label>
-              <input type="text" class="form-control" name="price" id="exampleInputPassword1" placeholder="{{__('masseges.pl price')}}">
-              @error('price')
-              <small  class="form-text text-danger">{{$message}}</small>
-              @enderror()
-          </div>
-          <div class="form-group">
-              <label for="exampleInputPassword1">{{__("masseges.details fr")}}  :</label>
-              <input type="text" class="form-control" name="details_fr" id="exampleInputPassword1" placeholder="{{__('masseges.pl details')}}">
-              @error('details_fr')
-              <small  class="form-text text-danger">{{$message}}</small>
-              @enderror()
-          </div>
-
-     <div class="form-group">
-         <label for="exampleInputPassword1">{{__("masseges.details en")}}  :</label>
-         <input type="text" class="form-control" name="details_en" id="exampleInputPassword1" placeholder="{{__('masseges.pl details')}}">
-         @error('details_en')
-         <small  class="form-text text-danger">{{$message}}</small>
-         @enderror()
-     </div>
-
-          <div class="form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-          </div>
-          <button type="submit" class="btn btn-primary">{{__("masseges.save offer")}} </button>
-      </form>
-
-      <!-- JavaScript Bundle with Popper -->
+        </tbody>
+    </table>
+     <!-- JavaScript Bundle with Popper -->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>

@@ -111,8 +111,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
 Route::group(['prefix'=>'offers'],function (){
 //Route::get('store','CrudeController@Store');
         Route::get('create','CrudeController@Create');
-         Route::post('store','CrudeController@Store')->name('offers.store');
-        }
+    Route::POST('store','CrudeController@Store')->name('offers.store');
+    Route::get('all','CrudeController@GetAllOffer');
+
+  }
     );
 
 

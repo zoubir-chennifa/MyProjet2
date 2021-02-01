@@ -21,6 +21,16 @@ return [
     'Offer price numeric'=> 'Offer price is numeric !!!',
     'Offer details required'=>'Offer details is required !!',
 
+    'Add your offfer'=>"Add your offfer",
+    'name en'=>'Name',
+    'price'=>'Price',
+    'details en'=>'Details',
+    'save offer en'=>'Save Offer',
+    'pl name'=>'Enter offer name',
+    'pl price'=>'Enter offer price',
+    'pl details'=>'Enter offer details',
+
+
 
 
 ];
